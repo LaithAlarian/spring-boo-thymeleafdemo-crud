@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+	<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<title>Table </title>
+		<link rel="stylesheet" th:href="@{/css/style.css}" />
+		
+		 <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+	</head>
+	<body>
+		
+		<div class="container">
+			
+			<h2>List Employees</h2>
+			<hr>
+			
+			<table class="table">
+				<thead>
+					<tr>
+						<td>Id</td>
+						<td>First name</td>
+						<td>Last name</td>
+						<td>Email</td>
+						<td>Action</td>
+					</tr>
+					
+				</thead>
+				<tbody>
+					<tr th:each="emp : ${employees}">
+					
+						<td th:text="${emp.id}"/>
+						<td th:text="${emp.firstName}"/>
+						<td th:text="${emp.lastName}"/>
+						<td th:text="${emp.email}"/>
+						
+					
+					</tr>
+				
+				</tbody>
+				
+			</table>
+		
+		</div>
+	
+	</body>
